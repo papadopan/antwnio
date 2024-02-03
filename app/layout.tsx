@@ -1,8 +1,12 @@
 import "./globals.css";
 import { Montserrat } from "next/font/google";
 import { Header } from "@/components/Header";
+import localFont from "next/font/local";
 
-const inter = Montserrat({ subsets: ["latin"] });
+const Iosevka = localFont({
+  src: "../fonts/Iosevka.woff",
+  display: "swap",
+});
 
 export const metadata = {
   title: "Home | Antonios Papadopoulos",
@@ -16,7 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={Iosevka.className}>
         <Header />
         {children}
       </body>
